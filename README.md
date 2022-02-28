@@ -1,27 +1,49 @@
-# Teste
+<img src="https://storage.googleapis.com/golden-wind/experts-club/capa-github.svg" />
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.4.
+# Trabalhando com Calendar em aplicações Angular.
 
-## Development server
+Nessa aula iremos implementar um calendário, utilizando o componente angular-calendar, em nossa aplicação Angular para que seja possível listar todos os eventos cadastrados em nossa base (Fake API). Além disso, aprenderemos a  cadastrar, atualizar e deletar essas informações através do calendário. Para esse aprendizado, trabalharemos com as perspectivas mensal e semanal.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Template utilizado na aula](https://github.com/rocketseat-experts-club/angular-best-practices-2022-01-15/tree/template)
 
-## Code scaffolding
+## Tecnologias
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Angular](https://angular.io/)
+- [Node](https://nodejs.org/en/)
 
-## Build
+## Links úteis
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Angular CLI](https://angular.io/cli)
+    - [generate](https://angular.io/cli/generate)
+- [NG Bootstrap](https://ng-bootstrap.github.io/#/home)
+- [Font Awesome](https://fontawesome.com)
+- [RxJS](https://rxjs.dev/guide/operators#creation-operators)
+- [Date-Fns](https://date-fns.org/)
+- [Angular-Calendar](https://mattlewis92.github.io/angular-calendar/docs/)
 
-## Running unit tests
+## Ambiente, recursos e requisitos necessários
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Node 16.14.0 (LTS);
+- Seu editor de código de preferência (No meu caso, Visual Studio Code);
+- Familiaridade com HTML, CSS e JavaScript;
+- Vontade de aprender :D
 
-## Running end-to-end tests
+## Comandos utilizados
+- ng add angular-calendar
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Testando a aplicação
+- Clone o repositório para a sua máquina
+- Abra um terminal na pasta principal da aplicação
+- Instale todas as dependências da aplicação utilizando o seguinte comando:
+    ```
+    npm install
+    ```
+- Antes de inicializar nossa aplicação, é necessário subir nossa fake API (Back-end server):
+    ```
+    npm run server
+    ```
+- Para rodar a aplicação, execute o comando:
+    ```
+    npm start
+    ```
+- Abra o seu browser na seguinte URL: http://localhost:4200

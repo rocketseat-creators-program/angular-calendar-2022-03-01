@@ -1,0 +1,148 @@
+{
+  "experts": [
+    {
+      "name": "Pedro Henrique",
+      "email": "pedro@gmail.com",
+      "id": 1
+    },
+    {
+      "name": "Vitor",
+      "email": "vitor@gmail.com",
+      "id": 2
+    },
+    {
+      "name": "Ana",
+      "email": "ana@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Gustavo",
+      "email": "gustavo@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "Thaissa",
+      "email": "thai@gmail.com",
+      "id": 5
+    }
+  ],
+  "schedules": [
+    {
+      "title": "Protegendo sua API RESTful com Spring Security e JWT",
+      "date": "2022-02-28",
+      "initTime": "15:00",
+      "endTime": "16:00",
+      "description": "Nessa aula aprenderemos como utilizar o JWT (Json Web Token) juntamente com o Spring Security para podermos controlar e gerenciar nosso fluxo de autenticação e autorização em nossa API RESTful.",
+      "expertsId": 1,
+      "id": 1
+    },
+    {
+      "title": "Configurando sua infraestrutura com Terraform",
+      "date": "2022-03-01",
+      "initTime": "15:30",
+      "endTime": "17:00",
+      "description": "Nessa aula iremos implementar uma infraestrutura na AWS utilizando os serviços SQS e S3. Com o auxílio do Terraform, iremos criar todos esses serviços utilizando linhas de códigos.\n\nAlém disso, vamos configurar também um evento de notificação para que toda vez que um arquivo seja adicionado no bucket S3, a fila SQS seja notificada.",
+      "expertsId": 1,
+      "id": 2
+    },
+    {
+      "title": "Utilizando Markers, Drag e Click events com Google Maps em projetos Angular",
+      "date": "2022-03-02",
+      "initTime": "17:00",
+      "endTime": "18:30",
+      "description": "Nessa aula iremos implementar o Google Maps em nossa aplicação Angular para que seja possível listar todos os alunos recuperados através de uma requisição GET. Além disso, aprenderemos também a utilizar alguns eventos como Drag (Arrastar) e Click (Clicar no mapa e no Marker) para poder cadastrar um novo aluno e editar suas informações.",
+      "expertsId": 1,
+      "id": 3
+    },
+    {
+      "title": "Definindo tipagem com Type Assertion em Typescript",
+      "date": "2022-03-01",
+      "initTime": "13:00",
+      "endTime": "14:30",
+      "description": "Nessa aula vamos tratar do asserção de tipos, e como ela funciona. Vamos entender o que ela faz e como ela pode ser utilizada em nosso código, aprendendo a diferença entre any vs unknown, como fazer oveload de tipos, como criar type conditiontionais e como proteger nosso código em tempo de execução.",
+      "expertsId": 2,
+      "id": 4
+    },
+    {
+      "title": "Offline first com Redux-offline",
+      "date": "2022-02-28",
+      "initTime": "13:00",
+      "endTime": "15:00",
+      "description": "Olá Experts, nesta aula aprenderemos como lidar com o offline first com redux-offline. Vamos aprender a utilizar o redux-offline para armazenar os dados offline e fazer o sync com o servidor utilizando-o de forma incremental, criando uma aplicação onde o usuário pode interagir com a aplicação com ou sem conexão a internet.",
+      "expertsId": 2,
+      "id": 5
+    },
+    {
+      "title": "Criando Custom middelwares com Redux",
+      "date": "2022-03-02",
+      "initTime": "16:00",
+      "endTime": "17:00",
+      "description": "Olá experts, nesta aula aprenderemos um pouco mais sobre a Redux middelwares, vamos explorar como eles fucionam e como criá-los do zero, vamos aprender a utilizar o middleware para lidar logs, google analytics, Throttle, e muito mais. Vamos construtir middlewares para lidar com API e normalizar dados.",
+      "expertsId": 2,
+      "id": 6
+    },
+    {
+      "title": "Micro Frontends: presente e futuro",
+      "date": "2022-03-01",
+      "initTime": "17:00",
+      "endTime": "18:00",
+      "description": "Olá a todos, neste workshop vamos falar um pouco sobre o presente e o futuro dos micro frontends. vamos aprender como montar micro frontends usando 'create-mf-app', vamos criar duas aplicações simulando um ambiente onde temos uma DSL desing system library (DSL) e uma aplicação frontend, que vai onsumir os serviços os componentes da DSL, com isso vamos explorar varias as técnicas de compartilhamento de código e de self healing que é a habilidade de um micro frontend se auto reconfigurar quando ocorre algum problema.",
+      "expertsId": 2,
+      "id": 7
+    },
+    {
+      "title": "Implementando RabbitMQ num projeto Spring",
+      "date": "2022-03-01",
+      "initTime": "14:30",
+      "endTime": "15:30",
+      "description": "O projeto da aula consiste em um sistema que gerencia notificações usando conceito de mensageria e uma ferramenta para nos auxiliar, o RabbitMQ junto de uma aplicação Spring. O intuito dessa aula é mostrar de forma sucinta de como implementar mensageria de subsincrições ou requisições retornando uma notificação personalizada. Nessa aula iremos implementar o conceito listener e consumer presentes no Message Broker Rabbitmq, baseado no fluxo de eventos na qual tem varios tipos de implementações: Processamento do fluxo do evento, Processamento de evento simples e complexo.",
+      "expertsId": 3,
+      "id": 8
+    },
+    {
+      "title": "Kafka4devs - Testes unitários com Mockito e KafkaTemplate",
+      "date": "2022-03-03",
+      "initTime": "14:00",
+      "endTime": "15:30",
+      "description": "Nós como pessoas desenvolvedora sabemo o valor de testes unitários no nosso código e como eles geram robutez e qualidade no nosso software. Nesta aula você irá aprender como aplicar essa abordagem de teste unitário em um controller que envia eventos e retorna sucesso e erro ao cliente, e também irá aprender como testar um producer do Kafka. Espero que aproveite!",
+      "expertsId": 3,
+      "id": 9
+    },
+    {
+      "title": "Kafka4devs - Criando um Producer e entendendo toda parte interna do Kafka",
+      "date": "2022-03-02",
+      "initTime": "14:00",
+      "endTime": "16:00",
+      "description": "Kafka é um dos frameworks mais usados por grandes empresas, afinal, como as mensagens enviadas por esses componentes se comunicam? Nesta aula você vai entender boa parte interna do Kafka, o que é um Producer, como configurar o kafka-server e o zookeper dentro da sua máquina e também como enviar mensagens através de um Producer feito dentro de um projeto utilizando SpringBoot. Esta aula faz parte de uma série de aulas que se chama kafka4devs onde você vai ter a oportunidade de entender tudo sobre Kafka com SpringBoot e como aplicar num projeto real e pálpavel!",
+      "expertsId": 3,
+      "id": 10
+    },
+    {
+      "title": "Como melhorar a comunicação escrita para devs",
+      "date": "2022-03-04",
+      "initTime": "16:00",
+      "endTime": "17:30",
+      "description": "Ajudar o aluno a estruturar perguntas para ajuda-lo a conseguir encontrar as respostas e se comunicar melhor com seus colegas Devs não precisam estruturar textos? Precisam sim, diariamente! Nesta aula, trazemos dicas para te ajudar a se comunicar com sua audiência, sejam colegas de trabalho, alunos, clientes, entre muitos outros.",
+      "expertsId": 5,
+      "id": 11
+    },
+    {
+      "title": "Expectativa x Realidade",
+      "date": "2022-03-03",
+      "initTime": "17:30",
+      "endTime": "19:00",
+      "description": "Sua entrega define como você é profissionalmente, nesta aula você irá receber dicas de como fazer um diagnóstico pessoal para entender em que aspectos você pode melhorar com passos simples e rápidos.",
+      "expertsId": 5,
+      "id": 12
+    },
+    {
+      "title": "O que é inovar? Pense simples!",
+      "date": "2022-03-07",
+      "initTime": "14:00",
+      "endTime": "16:00",
+      "description": "Nos tempos atuais, a palavra \"inovar\" vem sendo utilizada a todo momento, porém, raramente o ato de inovar realmente acontece. Nesta aula, você vai aprender que para inovar não é necessario ser o CEO de uma Startup, ou estar em uma equipe de uma multinacional. Inovação é simplicidade. Utilizando o livro \"Pense Simples\", do fundador da SambaTech Gustavo Caetano, iremos construir alguns insights para ajuda-lo a realmente inovar no dia a dia de desenvolvimento.",
+      "expertsId": 5,
+      "id": 13
+    }
+  ]
+}

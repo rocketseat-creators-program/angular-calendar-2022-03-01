@@ -1,0 +1,28 @@
+<h1 class="text-center my-4">Experts</h1>
+
+<app-experts-new 
+    (save)="loadExperts()">
+</app-experts-new>
+
+<table class="table text-center mt-5">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let expert of experts; trackBy:trackById">
+            <th>{{expert.id}}</th>
+            <td>{{expert.name}}</td>
+            <td>{{expert.email}}</td>
+            <td>
+                <button type="button" class="btn btn-sm btn-outline-danger mx-1" (click)="onDeleteClick(expert.id)">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
