@@ -1,6 +1,7 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarView } from 'angular-calendar';
 import { Schedule } from '../schedule';
 import { ScheduleService } from '../schedule.service';
 
@@ -13,6 +14,10 @@ export class SchedulesListComponent implements OnInit {
 
   @ViewChild('modalContent', { static: true }) modalContent!: TemplateRef<any>;
 
+  CalendarView = CalendarView;
+  viewDate: Date = new Date();
+  view: CalendarView = CalendarView.Month;
+
   modalData!: { schedule: Schedule };
 
   constructor(
@@ -22,6 +27,10 @@ export class SchedulesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadSchedules();
+  }
+
+  setView(view: CalendarView) {
+    this.view = view;
   }
 
   private loadSchedules() {
