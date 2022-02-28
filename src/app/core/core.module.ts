@@ -7,7 +7,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { ExceptionInterceptor } from './interceptors/exception.interceptor';
-import { NgxMaskModule } from 'ngx-mask';
 import { RouterModule } from '@angular/router';
 
 const toastrConfig = {
@@ -30,7 +29,6 @@ const toastrConfig = {
 
     NgbModule,
     NgxSpinnerModule,
-    NgxMaskModule,
     ToastrModule.forRoot(toastrConfig)
   ],
   exports: [
