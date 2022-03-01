@@ -1,11 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --purple: #8257e6;
+    --white: #FFFFFF;
+    --bg-purple-alpha: rgba(130, 87, 230, .2)
+}
 
 a {
     text-decoration: none !important;
 }
 
 p, h1, h2, h3, h4, h5, label, small {
-    color: #FFFFFF !important;
+    color: var(--white);
 }
 
 body {
@@ -18,39 +22,39 @@ body {
 
 /* Custom Text */
 .text-purple {
-    color: #8257e6 !important;
+    color: var(--purple);
 }
 
 /* Custom Badges */
 .badge-purple {
-    background-color: #8257e6;
+    background-color: var(--purple);
 }
 
 /* Custom Alerts */
 .alert-purple {
-    background-color: #8257e6;
-    color: #FFFFFF;
+    background-color: var(--purple);
+    color: var(--white);
 }
 
 /* Custom Buttons */
 .btn-purple {
-    color: #FFFFFF !important;
-    background-color: #8257e6;
+    color: var(--white);
+    background-color: var(--purple);
     background-image: none;
-    border-color: #8257e6
+    border-color: var(--purple)
 }
 
 .btn-outline-purple {
-    color: #8257e6 !important;
+    color: var(--purple);
     background-color: transparent;
     background-image: none;
-    border-color: #8257e6
+    border-color: var(--purple)
 }
 
 .btn-outline-purple:hover {
-    color: #FFFFFF !important;
-    background-color: #8257e6;
-    border-color: #8257e6
+    color: var(--white);
+    background-color: var(--purple);
+    border-color: var(--purple)
 }
 
 /* Custom BG */
@@ -59,11 +63,30 @@ body {
 }
 
 /* Custom Reactive Forms Validation */
-.ng-invalid {
+.ng-touched.ng-invalid {
+    border-left-width: 5px;
     border-color: #DC3545;
 }
 
 /* Custom Table */
 .table {
-    color: #FFFFFF;
+    color: var(--white);
+}
+
+/* Custom Angular-Calendar */
+.cal-day-badge {
+    background-color: var(--purple) !important;
+}
+
+.cell-disabled {
+    background-color: rgba(211, 211, 211, .5);
+    cursor: not-allowed;
+}
+
+.cell-available {
+    cursor: pointer;
+}
+
+.cell-available:hover {
+    background-color: var(--bg-purple-alpha) !important;
 }

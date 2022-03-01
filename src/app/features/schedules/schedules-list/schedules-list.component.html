@@ -51,6 +51,7 @@
         [events]="events"
         [dayStartHour]="13"
         [dayEndHour]="23"
+        (beforeViewRender)="onBeforeRenderWeek($event)"
         (hourSegmentClicked)="onSegmentClick($event.date)"
         (eventClicked)="onEventClick($event.event)">
     </mwl-calendar-week-view>

@@ -1,8 +1,9 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarEvent, CalendarEventAction, CalendarView } from 'angular-calendar';
-import { format, isSameDay, isSameMonth, parse, parseISO } from 'date-fns';
+import { CalendarEvent, CalendarEventAction, CalendarView, CalendarWeekViewBeforeRenderEvent } from 'angular-calendar';
+import { MonthViewDay } from 'calendar-utils';
+import { format, isAfter, isBefore, isSameDay, isSameMonth, parse, parseISO } from 'date-fns';
 import { Schedule } from '../schedule';
 import { ScheduleService } from '../schedule.service';
 
@@ -16,10 +17,10 @@ export class SchedulesListComponent implements OnInit {
   @ViewChild('modalContent', { static: true }) modalContent!: TemplateRef<any>;
 
   CalendarView = CalendarView;
-  viewDate: Date = new Date();
+  viewDate = new Date();
+  activeDayIsOpen = false;
+  view = CalendarView.Month;
   events: CalendarEvent[] = [];
-  activeDayIsOpen: boolean = false;
-  view: CalendarView = CalendarView.Month;
 
   modalData!: { schedule: Schedule };
 
@@ -32,9 +33,26 @@ export class SchedulesListComponent implements OnInit {
     this.loadSchedules();
   }
 
-  onDayClick({ date, events }: { date: Date; events: CalendarEvent[] }): void {
+  setView(view: CalendarView) {
+    this.view = view;
+  }
+
+  closeActiveDay() {
+    this.activeDayIsOpen = false;
+  }
+
+  onBeforeRenderWeek({ hourColumns }: CalendarWeekViewBeforeRenderEvent) {
+    const todayDate = new Date();
+    const segmentDays = hourColumns.flatMap(hc => hc.hours.flatMap(hours => hours.segments));
+
+    segmentDays.forEach(segment => {
+      segment.cssClass = isBefore(segment.date, todayDate) ? 'cell-disabled' : 'cell-available';
+    });
+  }
+
+  onDayClick({ date, events }: MonthViewDay) {
     if (isSameMonth(date, this.viewDate)) {
-      if ((isSameDay(this.viewDate, date) && this.activeDayIsOpen === true) || events.length === 0) {
+      if (events.length === 0 || (isSameDay(this.viewDate, date) && this.activeDayIsOpen)) {
         this.activeDayIsOpen = false;
       } else {
         this.activeDayIsOpen = true;
@@ -50,20 +68,14 @@ export class SchedulesListComponent implements OnInit {
   }
 
   onSegmentClick(date: Date) {
-    this.router.navigate(['schedules/new'], {
-      queryParams: {
-        date: format(date, 'yyyy-MM-dd'),
-        initTime: format(date, 'HH:mm')
-      }
-    });
-  }
-
-  setView(view: CalendarView) {
-    this.view = view;
-  }
-
-  closeActiveDay() {
-    this.activeDayIsOpen = false;
+    if (isAfter(date, new Date())) {
+      this.router.navigate(['schedules/new'], {
+        queryParams: {
+          date: format(date, 'yyyy-MM-dd'),
+          initTime: format(date, 'HH:mm')
+        }
+      });
+    }
   }
 
   private buildEventActions(schedule: Schedule) {
@@ -90,25 +102,29 @@ export class SchedulesListComponent implements OnInit {
   }
 
   private buildEvent(schedule: Schedule) {
-    return {
+    const parsedDate = parseISO(schedule.date);
+    const event: CalendarEvent = {
       title: schedule.title,
-      start: parse(schedule.initTime, 'HH:mm', parseISO(schedule.date)),
-      end: parse(schedule.endTime, 'HH:mm', parseISO(schedule.date)),
-      actions: this.buildEventActions(schedule),
+      start: parse(schedule.initTime, 'HH:mm', parsedDate),
+      end: parse(schedule.endTime, 'HH:mm', parsedDate),
+      cssClass: 'event-body',
       color: {
-        primary: '#ad2121',
-        secondary: '#FAE3E3',
+        primary: 'var(--purple)',
+        secondary: 'var(--bg-purple-alpha)'
       },
       meta: schedule
     }
+
+    if (isAfter(event.start, new Date())) {
+      event.actions = this.buildEventActions(schedule);
+    }
+
+    return event;
   }
 
   private loadSchedules() {
     this.scheduleService.findAll().subscribe(response => {
-      this.events = [];
-      response.forEach(schedule => {
-        this.events.push(this.buildEvent(schedule));
-      });
+      this.events = response.map(schedule => this.buildEvent(schedule));
     });
   }
 
