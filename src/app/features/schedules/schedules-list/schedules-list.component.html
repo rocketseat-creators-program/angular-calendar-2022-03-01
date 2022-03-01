@@ -21,13 +21,13 @@
             </div>
 
             <div class="btn-group">
-                <button type="button" class="btn btn-outline-purple" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate">
+                <button type="button" class="btn btn-outline-purple" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeActiveDay()">
                     <i class="fa-solid fa-arrow-left"></i>
                 </button>
                 <button type="button" class="btn btn-outline-purple" mwlCalendarToday [(viewDate)]="viewDate">
                     <i class="fa-solid fa-calendar-check"></i>
                 </button>
-                <button type="button" class="btn btn-outline-purple" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate">
+                <button type="button" class="btn btn-outline-purple" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeActiveDay()">
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
             </div>
