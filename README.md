@@ -4,7 +4,7 @@
 
 Nessa aula iremos implementar um calendário, utilizando o componente angular-calendar, em nossa aplicação Angular para que seja possível listar todos os eventos cadastrados em nossa base (Fake API). Além disso, aprenderemos a  cadastrar, atualizar e deletar essas informações através do calendário. Para esse aprendizado, trabalharemos com as perspectivas mensal e semanal.
 
-- [Template utilizado na aula](https://github.com/rocketseat-experts-club/angular-calendar-2022-02-25/tree/template)
+- [Template utilizado na aula](https://github.com/rocketseat-experts-club/angular-calendar-2022-03-01/tree/template)
 
 ## Tecnologias
 
