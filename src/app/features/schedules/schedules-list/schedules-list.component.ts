@@ -1,11 +1,8 @@
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarView } from 'angular-calendar';
 import { MonthViewDay } from 'calendar-utils';
 import { isSameDay, isSameMonth } from 'date-fns';
 import { Schedule } from '../schedule';
-import { ScheduleService } from '../schedule.service';
 
 @Component({
   selector: 'app-schedules-list',
@@ -23,10 +20,7 @@ export class SchedulesListComponent implements OnInit {
 
   modalData!: { schedule: Schedule };
 
-  constructor(
-    private router: Router,
-    private modal: NgbModal,
-    private scheduleService: ScheduleService) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.loadSchedules();
@@ -53,9 +47,7 @@ export class SchedulesListComponent implements OnInit {
   }
 
   private loadSchedules() {
-    this.scheduleService.findAll().subscribe(response => {
 
-    });
   }
 
 }
