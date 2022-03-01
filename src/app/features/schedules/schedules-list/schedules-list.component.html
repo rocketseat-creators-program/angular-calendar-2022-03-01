@@ -40,7 +40,7 @@
         *ngSwitchCase="CalendarView.Month"
         [viewDate]="viewDate"
         [activeDayIsOpen]="activeDayIsOpen"
-        (dayClicked)="onDayClick">
+        (dayClicked)="onDayClick($event.day)">
     </mwl-calendar-month-view>
     
     <mwl-calendar-week-view
