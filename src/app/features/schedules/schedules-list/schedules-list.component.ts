@@ -41,15 +41,6 @@ export class SchedulesListComponent implements OnInit {
     this.activeDayIsOpen = false;
   }
 
-  onBeforeRenderWeek({ hourColumns }: CalendarWeekViewBeforeRenderEvent) {
-    const todayDate = new Date();
-    const segmentDays = hourColumns.flatMap(hc => hc.hours.flatMap(hours => hours.segments));
-
-    segmentDays.forEach(segment => {
-      segment.cssClass = isBefore(segment.date, todayDate) ? 'cell-disabled' : 'cell-available';
-    });
-  }
-
   onDayClick({ date, events }: MonthViewDay) {
     if (isSameMonth(date, this.viewDate)) {
       if (events.length === 0 || (isSameDay(this.viewDate, date) && this.activeDayIsOpen)) {
@@ -76,6 +67,16 @@ export class SchedulesListComponent implements OnInit {
         }
       });
     }
+  }
+
+  onBeforeRenderWeek({ hourColumns }: CalendarWeekViewBeforeRenderEvent) {
+    const todayDate = new Date();
+    const hours = hourColumns.flatMap(hc => hc.hours);
+    const segments = hours.flatMap(hours => hours.segments);
+
+    segments.forEach(segment => {
+      segment.cssClass = isBefore(segment.date, todayDate) ? 'cell-disabled' : 'cell-available';
+    });
   }
 
   private buildEventActions(schedule: Schedule) {
